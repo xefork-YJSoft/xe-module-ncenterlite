@@ -30,6 +30,7 @@ class ncenterlite extends ModuleObject
 	var $_TYPE_VOTED = 'V'; // 추천글 안내 알림
 	var $_TYPE_TEST = 'T';
 	var $_TYPE_CUSTOM = 'U'; //Updated alert(uses type table)
+	var $_TYPE_NEW_DOCUMENT = 'N';
 
 	var $triggers = array(
 		array('comment.insertComment', 'ncenterlite', 'controller', 'triggerAfterInsertComment', 'after'),

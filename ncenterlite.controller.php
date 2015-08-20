@@ -74,6 +74,18 @@ class ncenterliteController extends ncenterlite
 
 		$content = strip_tags($obj->title . ' ' . $obj->content);
 
+		$d_args = new stdClass();
+		$d_args->document_srl = $obj->document_srl
+		$d_args->type = $this->_TYPE_NEW_DOCUMENT;
+		$d_args->target_member_srl = $obj->member_srl;
+		$d_args->module_srl = $obj->module_srl;
+		$d_args->target_summary = cut_str(strip_tags($obj->title), 50);
+		$d_args->target_url = getNotEncodedFullUrl('', 'document_srl', $obj->document_srl);
+		$d_args->regdate = date('YmdHis');
+		$d_args->target_content = $obj->content;
+
+		$d_output = executeQuery('ncenterlite.insertNotifyNewdoc', $d_args);
+
 		$mention_targets = $this->_getMentionTarget($content);
 		if(!$mention_targets || !count($mention_targets)) return new Object();
 

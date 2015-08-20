@@ -1,0 +1,15 @@
+<query id="insertNotifyNewdoc" action="insert">
+	<tables>
+		<table name="ncenterlite_newdoc" />
+	</tables>
+	<columns>
+		<column name="document_srl" var="document_srl" filter="number" notnull="notnull" />
+		<column name="type" var="type" notnull="notnull" />
+		<column name="target_member_srl" var="target_member_srl" />
+		<column name="module_srl" var="module_srl" notnull="notnull" />
+		<column name="target_summary" var="target_summary" />
+		<column name="target_url" var="target_url" notnull="notnull" />
+		<column name="regdate" var="regdate" />
+		<column name="target_content" var="target_content" />
+	</columns>
+</query>
