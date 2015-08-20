@@ -75,7 +75,7 @@ class ncenterliteController extends ncenterlite
 		$content = strip_tags($obj->title . ' ' . $obj->content);
 
 		$d_args = new stdClass();
-		$d_args->document_srl = $obj->document_srl
+		$d_args->document_srl = $obj->document_srl;
 		$d_args->type = $this->_TYPE_NEW_DOCUMENT;
 		$d_args->target_member_srl = $obj->member_srl;
 		$d_args->module_srl = $obj->module_srl;
